@@ -1,12 +1,21 @@
 import React from 'react'
 import "./ParkingSpace.css"
-function ParkingSpace() {
+function ParkingSpace({setIsEntryData,setIsExit}) {
+
+  const entryBtn = () =>{
+    setIsEntryData(true)
+  }
+
+  const exitBtn = () =>{
+    setIsExit(true)
+  }
+
   return (
     <div className='parking-container'>
 
         <div className='parking-space-first'>
          <div className='parking-space'>
-            <div className='space 1'><span>1</span><button>leave</button></div>
+            <div className='space 1'><span>1</span></div>
             <div className='space 2'><span>2</span></div>
             <div className='space 3'><span>3</span></div>
             <div className='space 4'><span>4</span></div>
@@ -24,9 +33,9 @@ function ParkingSpace() {
                 <div className='space 11'><span className='left'>11</span></div>
                 <div className='space 10'><span className='left'>12</span></div>
             </div>
-            <span className='red'>Exit</span>
+            <span className='red' onClick={() => exitBtn()}>Exit</span>
             <div className='cross'></div>
-            <span className='green'>Entry</span>
+            <span className='green' onClick={() => entryBtn()}>Entry</span>
             <div className='parking-space'>
                 <div className='space 14'><span className='right'>13</span></div>
                 <div className='space 15'><span className='right'>14</span></div>

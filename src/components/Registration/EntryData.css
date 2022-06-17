@@ -1,0 +1,75 @@
+.entry-container{
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 500px;
+    height: 600px;
+    margin: auto;
+    position: absolute;
+    top:50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5%;
+}
+
+.entry-container >form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 80px;
+    padding: 30px;
+    position: relative;
+}
+
+form > input{
+ width: 300px;
+ height: 20px;
+ padding: 5px;
+ outline: none;
+ border: none;
+ border-bottom: 4px solid #2c3e50;
+}
+
+form > label{
+    text-align: start;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+form > select{
+    width: 312px;
+    height:35px;
+    padding:5px;
+}
+
+button[type="submit"]{
+    width: 130px;
+    margin-left:90px;
+    margin-top: 20px;
+    padding: 2%;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5%;
+}
+
+.corss-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right:15px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 1;
+}
