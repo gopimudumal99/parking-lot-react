@@ -1,0 +1,87 @@
+.parking-container{
+    width: 99vw;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+
+.parking-space-first > .parking-space{
+    display: flex;
+}
+
+.parking-space-first > .parking-space >.space > span,button{
+    margin-top: 300px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.parking-space-first > .parking-space >.space{
+    width: 150px;
+    height:250px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/images/redcar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 130px;
+    
+}
+
+.space>span{
+    color: white;
+    font-size: 30px;
+}
+
+.parking-space-second{
+    display: flex;
+    justify-content: space-between;
+    margin-top:150px;
+}
+
+.parking-space-second >.parking-space > .space{
+    width: 310px;
+    height:130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/images/car1.png");
+    background-size:260px;
+    background-repeat: no-repeat;
+    border: 2px solid white;
+    background-position: center;
+}
+
+.parking-space-second >.parking-space > .space >.left{
+    transform:rotate(-90deg);
+    margin-left:350px;
+}
+
+.parking-space-second >.parking-space > .space >.right{
+    transform:rotate(90deg);
+    margin-right:350px;
+}
+.cross{
+    width: 10px;
+    height:400px;
+    border: 2px solid white;
+    background-color: aliceblue;
+}
+
+.parking-space-second >span{
+    font-size: 30px;
+    font-weight: bold;
+    color: yellow;
+    text-transform: uppercase;
+    margin-top: 130px;
+}
+
+.parking-space-second > .green{
+    color: green;
+}
+
+.parking-space-second > .red{
+    color: red
+}
