@@ -8,9 +8,10 @@ let exitVehicleData = {
   vehiNumber:""
 }
 
-function ExitVehicle() {
+function ExitVehicle({setExitAmount}) {
   let navigate = useNavigate()
   const [exitVehicle,setExitVehicle] = useState(exitVehicleData)
+  // const [exitAmount,setExitAmount] = useState([])
 
   let vehiclesEntries1  = JSON.parse(localStorage.getItem("vehicles1") || "[]")
   let vehiclesEntries2  = JSON.parse(localStorage.getItem("vehicles2") || "[]")
@@ -28,20 +29,33 @@ function ExitVehicle() {
       let exitVehi2= vehiclesEntries2 && vehiclesEntries2.filter(vehi => (vehi.owner !== exitVehicle.vehiOwner || vehi.vehiNumber !== exitVehicle.vehiNumber || vehi.vehiType !== exitVehicle.vehiType))
       let exitVehi3= vehiclesEntries3 && vehiclesEntries3.filter(vehi => (vehi.owner !== exitVehicle.vehiOwner || vehi.vehiNumber !== exitVehicle.vehiNumber || vehi.vehiType !== exitVehicle.vehiType))
 
+      let exitVehiData1= vehiclesEntries1 && vehiclesEntries1.filter(vehi => (vehi.owner === exitVehicle.vehiOwner || vehi.vehiNumber === exitVehicle.vehiNumber || vehi.vehiType === exitVehicle.vehiType))
+      let exitVehiData2= vehiclesEntries2 && vehiclesEntries2.filter(vehi => (vehi.owner === exitVehicle.vehiOwner || vehi.vehiNumber === exitVehicle.vehiNumber || vehi.vehiType === exitVehicle.vehiType))
+      let exitVehiData3= vehiclesEntries3 && vehiclesEntries3.filter(vehi => (vehi.owner === exitVehicle.vehiOwner || vehi.vehiNumber === exitVehicle.vehiNumber || vehi.vehiType === exitVehicle.vehiType))
+
+
+      if(exitVehiData1.length>0){
+        setExitAmount(exitVehiData1)
+      }else if(exitVehiData2.length>0){
+        setExitAmount(exitVehiData2)
+      }else if(exitVehiData3.length>0){
+        setExitAmount(exitVehiData3)
+      }
+
       if(exitVehi1.length < vehiclesEntries1.length){
         localStorage.setItem("vehicles1",JSON.stringify(exitVehi1))
-        navigate("/")
         alert("exited!")
+        navigate("/amount")
         return
       }else if (exitVehi2.length < vehiclesEntries2.length){
         localStorage.setItem("vehicles2",JSON.stringify(exitVehi2))
-        navigate("/")
         alert("exited!")
+        navigate("/amount")
 
       }else if (exitVehi3.length < vehiclesEntries3.length){
         localStorage.setItem("vehicles3",JSON.stringify(exitVehi3))
-        navigate("/")
         alert("exited!")
+        navigate("/amount")
       }else {
         alert("Given information vehicle is not there ")
       }

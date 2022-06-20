@@ -53,26 +53,26 @@ function EntryData() {
             <label htmlFor="owner">
                 Owner name
             </label>
-            <input type="text" name="owner" value={vehicle.owner} id="owner" placeholder='Enter vehicle owner name' onChange={handleInput} />
+            <input type="text" name="owner" value={vehicle.owner} id="owner" placeholder='Enter vehicle owner name' onChange={handleInput} required/>
             <label htmlFor="vehiType">
             Vehicle Type 
             </label>
-            <select name="vehiType" id="vehiType" value={vehicle.vehiType} onChange={handleInput}>
+            <select name="vehiType" id="vehiType" value={vehicle.vehiType} onChange={handleInput} required>
                 <option value="--">please select</option>
                 <option value="car">4 wheeler</option>
                 <option value="bike">2 wheeler</option>
                 <option value="auto">3 wheeler</option>
             </select>
             <label htmlFor="vehiNumber"> Vehicle Number</label>
-            <input type="text" name="vehiNumber" value={vehicle.vehiNumber} id="vehiNumber" placeholder='NN-NN-NN plese give proper vehicle-number' onChange={handleInput}/>
+            <input type="text" name="vehiNumber" value={vehicle.vehiNumber} id="vehiNumber" placeholder='NN-NN-NN plese give proper vehicle-number' onChange={handleInput} required/>
             <label htmlFor="entryDate">Entry Date</label>
-            <input type="date" name="entryDate" value={vehicle.entryDate} id="entryDate" onChange={handleInput}/>
+            <input type="date" name="entryDate" value={vehicle.entryDate} id="entryDate" onChange={handleInput} required/>
             <label htmlFor="entryTime">Entry Time</label>
-            <input type="time" name="entryTime" value={vehicle.entryTime} id="entryTime" onChange={handleInput}/>
+            <input type="time" name="entryTime" value={vehicle.entryTime} id="entryTime" onChange={handleInput} required/>
             <label htmlFor="exitDate">Exit Date</label>
-            <input type="date" name="exitDate" value={vehicle.exitDate} id="exitDate" onChange={handleInput}/>
+            <input type="date" name="exitDate" value={vehicle.exitDate} id="exitDate" onChange={handleInput} required/>
             <label htmlFor="exitTime">Exit Time</label>
-            <input type="time" name="exitTime" value={vehicle.exitTime} id="exitTime"onChange={handleInput}/>
+            <input type="time" name="exitTime" value={vehicle.exitTime} id="exitTime"onChange={handleInput} required/>
 
             <button type='submit'>Submit</button>
         </form>

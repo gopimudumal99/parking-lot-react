@@ -20,6 +20,7 @@ const data = {
 function App() {
   const [state, setState] = useState(data);
   const [user, setUser] = useState({});
+  const [exitAmount ,setExitAmount] = useState([])
 
   return (
     <div className="App">
@@ -29,8 +30,8 @@ function App() {
         <Route path='/register' element={<Register state={state} setState={setState}/>}/>
         <Route path='/login' element={<Login setUser={setUser} />}/>
         <Route path='/entryVehicle' element={<EntryData/>}/>
-        <Route path='/exitVehicle' element={<ExitVehicle/>}/>
-        <Route path ="/amount" element={<ChargeAmmount/>}/>
+        <Route path='/exitVehicle' element={<ExitVehicle setExitAmount={setExitAmount}/>}/>
+        <Route path ="/amount" element={<ChargeAmmount exitAmount={exitAmount}/>}/>
       </Routes>
     </div>
   );
