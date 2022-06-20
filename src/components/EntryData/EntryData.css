@@ -12,6 +12,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5%;
+    transform: scale(.85);
+    margin-top: -280px;
+    margin-left: -250px;
 }
 
 .entry-container >form{
@@ -29,6 +32,7 @@ form > input{
  padding: 5px;
  outline: none;
  border: none;
+ border-radius: 5px;
  border-bottom: 4px solid #2c3e50;
 }
 
@@ -37,6 +41,8 @@ form > label{
     margin-top: 15px;
     font-weight: bold;
     font-size: 18px;
+    border-radius: 5px;
+    outline: none;
     color: white;
 }
 

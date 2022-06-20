@@ -7,3 +7,8 @@ width: 100%;
 background: #232526;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to top, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
 }
+
+.loggedIn{
+  margin-top: 200px;
+  color: white;
+}

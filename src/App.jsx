@@ -1,22 +1,37 @@
 import './App.css';
 import React,{useState} from 'react'
+import {Route,Routes} from 'react-router-dom'
 import ParkingSpace from './components/ParkingSpace/ParkingSpace';
-import EntryData from './components/Registration/EntryData';
+import EntryData from './components/EntryData/EntryData';
 import ExitVehicle from './components/Exit/ExitVehicle';
 import ChargeAmmount from './components/Charges/ChargeAmmount';
+import Navbar from './components/Navbar/Navbar';
+import Register from './components/Registration/Register';
+import Login from './components/Registration/Login';
 
+const data = {
+  username: "",
+  email: "",
+  phoneNo: "",
+  password: "",
+  cpassword: ""
+};
 
 function App() {
-  const[isEntryData,setIsEntryData] = useState(false)
-  const[isExit,setIsExit] = useState(false)
-  const [isAmount,setIsAmount] = useState(false)
+  const [state, setState] = useState(data);
+  const [user, setUser] = useState({});
 
-  console.log(isEntryData)
   return (
     <div className="App">
-    {
-      !isEntryData ? !isExit ?isAmount? <ChargeAmmount setIsAmount={setIsAmount}/>:<ParkingSpace setIsEntryData={setIsEntryData} setIsExit={setIsExit}/>:<ExitVehicle setIsExit={setIsExit}/> :<EntryData setIsEntryData={setIsEntryData}/>
-    }
+      <Navbar user= {user} setUser={setUser}/>
+      <Routes>
+        <Route path='/' element={ user.email ? <ParkingSpace /> : <h1 className='loggedIn'>Please Logged In!</h1> }/>
+        <Route path='/register' element={<Register state={state} setState={setState}/>}/>
+        <Route path='/login' element={<Login setUser={setUser} />}/>
+        <Route path='/entryVehicle' element={<EntryData/>}/>
+        <Route path='/exitVehicle' element={<ExitVehicle/>}/>
+        <Route path ="/amount" element={<ChargeAmmount/>}/>
+      </Routes>
     </div>
   );
 }
